@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Tr37rhmtJ5YDhUvv4YB3rtJbtbmtV3YN6VMLtLr8cYBfM8j1PN0507UzI42nUl84dqGbleBW8QZ/UcN0ns21QQ==",
+  "dgSpecHash": "qvka7OPpzeSunxHmuQhZiIda+o6IEPKSWtPfoaQveLSLgY4pTlJeCJ5liwNipVjlSM93AKcznsHfHvssJA+hlg==",
   "success": true,
-  "projectFilePath": "/Users/priyamshrestha/Desktop/ITPE - 3200/mine_applikasjoner/ny/aksje2_v_4/aksje2/aksje2.csproj",
+  "projectFilePath": "/Users/priyamshrestha/Desktop/ITPE - 3200/mine_applikasjoner/ny/oblig_1/webapplikasjoner_aksje_v2/aksje2/aksje2.csproj",
   "expectedPackageFiles": [
     "/Users/priyamshrestha/.nuget/packages/avapi/1.4.8.3/avapi.1.4.8.3.nupkg.sha512",
     "/Users/priyamshrestha/.nuget/packages/castle.core/4.4.0/castle.core.4.4.0.nupkg.sha512",

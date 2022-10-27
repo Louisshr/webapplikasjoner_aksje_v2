@@ -62,7 +62,12 @@ namespace aksje2.DAL
 
                 // beregner total pris for handelen, og sjekker om personen har nok penger på konto for å betale for kjøpet
 
-                var kjopPris = enAksje.verdi * innSalg.antall;                
+                var kjopPris = enAksje.verdi * innSalg.antall;
+
+                if (kjopPris == 0)
+                {
+                    return false;
+                }
 
                 if (enPerson.saldo < kjopPris)
                 {

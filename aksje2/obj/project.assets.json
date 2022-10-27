@@ -8808,11 +8808,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/priyamshrestha/Desktop/ITPE - 3200/mine_applikasjoner/ny/aksje2_v_4/aksje2/aksje2.csproj",
+      "projectUniqueName": "/Users/priyamshrestha/Desktop/ITPE - 3200/mine_applikasjoner/ny/oblig_1/webapplikasjoner_aksje_v2/aksje2/aksje2.csproj",
       "projectName": "aksje2",
-      "projectPath": "/Users/priyamshrestha/Desktop/ITPE - 3200/mine_applikasjoner/ny/aksje2_v_4/aksje2/aksje2.csproj",
+      "projectPath": "/Users/priyamshrestha/Desktop/ITPE - 3200/mine_applikasjoner/ny/oblig_1/webapplikasjoner_aksje_v2/aksje2/aksje2.csproj",
       "packagesPath": "/Users/priyamshrestha/.nuget/packages/",
-      "outputPath": "/Users/priyamshrestha/Desktop/ITPE - 3200/mine_applikasjoner/ny/aksje2_v_4/aksje2/obj/",
+      "outputPath": "/Users/priyamshrestha/Desktop/ITPE - 3200/mine_applikasjoner/ny/oblig_1/webapplikasjoner_aksje_v2/aksje2/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/priyamshrestha/.nuget/NuGet/NuGet.Config"
