@@ -59,6 +59,7 @@ function kjop(id) {
             //informasjon skal kun opprettes hvis get kallet er suksessfullt (skal være en if setning)
             //kan hende at bestilling navn og kurs bør defineres utenfor en funksjon slik at man ikke trenger å hente de hver gang
 
+            $("#receit_box").modal('hide');
             document.getElementById("popupBox").innerHTML = "Kjøp " + "(" + aksje.navn + ")";
             document.getElementById("kjop-knapp").onclick = function () { fullforKjop(aksje.id, aksje.verdi, aksje.navn); }
         }
@@ -80,9 +81,11 @@ function fullforKjop(id, verdi, aksje) {
     // mulig å endre slik at det vises forskjellig feilmelding avhengig av om input er bokstaver eller om input feltet er tomt.
 
     if (isNaN(antall) || antall_input == '') {
-        document.getElementById("bestilling-feil").innerHTML = "Venligst oppgi et gyldig antall";
+        document.getElementById("kjopFeilmelding").innerHTML = "Venligst oppgi et gyldig antall";
     }
     else {
+        document.getElementById("kjopFeilmelding").innerHTML = "";
+
         let total_pris = verdi * antall;
 
         let salgObjekt =
@@ -93,17 +96,34 @@ function fullforKjop(id, verdi, aksje) {
             aksje: id
         }
         $.post("aksje/kjopAksje", salgObjekt, function (OK) {
+
+            let receitHeader = document.getElementById("receitPopupBox");
+            let kvitteringMelding = document.getElementById("kvittering-melding");
             let ut = "";
 
+            $("#kjop_popupBox").modal('hide');
+            $("#receit_box").modal('toggle');
+
+            document.getElementById("typeNumber").value = "";
+
             if (OK) {
-                ut = "Kjøp er gjennomført. Du handlet " + antall + " " + aksje + " aksjer. ";
+
+                receitHeader.innerHTML = "Kvittering";
+                ut = "<table><tbody>" + "<tr><td>" + "<b>Kjøp gjennomført</b>" + "</td></tr><tr><td></td></tr>" +
+                    "<tr><td>" + "Aksje handlet: " + aksje + "</td></tr>" +
+                    "<tr><td>" + "Antall: " + antall + "</td></tr>" +
+                    "<tr><td>" + "Totalpris: " + total_pris + " $" + "</td></tr>" + "</tbody></table>";
+
+                kvitteringMelding.innerHTML = ut;
+
             }
             else {
-                ut = "Det oppstod en feil under kjøpet. Kjøpet er avbrutt";
+                receitHeader.innerHTML = "Feil";
+                ut = "<table><tbody>" + "<tr><td>" + "Det har opstått en feil" + "</td></tr>" +
+                    "<tr><td>" + "<b>Kjøpet er avbrutt<b>" + "</td></tr>" + "</tbody></table>";
+
+                kvitteringMelding.innerHTML = ut;
             }
-
-            console.log(ut);
-
 
         })
 
