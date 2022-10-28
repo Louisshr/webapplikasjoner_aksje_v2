@@ -60,6 +60,8 @@ function formaterPortefolje(portefolje) {
 function selg(id) {
     const url = "aksje/hentEn?id=" + id;
 
+    $("#receitBox2").modal('hide');
+
     $.get(url, function (aksje) {
         //informasjon skal kun opprettes hvis get kallet er suksessfullt
         //kan hende at bestilling navn og kurs bør defineres utenfor en funksjon slik at man ikke trenger å hente de hver gang
@@ -86,17 +88,37 @@ function fullforSalg(aksje_id, verdi, aksje_navn) {
         antall: antall
     }
 
+
+    let receitHeader = document.getElementById("receitSelgBox");
+    let kvitteringMelding = document.getElementById("selg-kvittering-melding");
+    let ut = "";
+
+    document.getElementById("typeNumber").value = "";
+
+    $("#selg_popupBox").modal('hide');
+    $("#receitBox2").modal('toggle');
+
     $.post("aksje/selg", selg_objekt, function (OK) {
         if (OK) {
-            console.log("Solgt: " + aksje_navn + ", verdi: " + verdi * antall);
+            receitHeader.innerHTML = "Kvittering for salg";
+
+            ut = "<table><tbody>" + "<tr><td>" + "<b>Salg gjennomført</b>" + "</td></tr><tr><td></td></tr>" +
+                "<tr><td>" + "Aksje solgt: " + aksje_navn + "</td></tr>" +
+                "<tr><td>" + "Antall: " + antall + "</td></tr>" +
+                "<tr><td>" + "Totalpris: " + verdi * antall + " $" + "</td></tr>" + "</tbody></table>";
+
+            kvitteringMelding.innerHTML = ut
+
             hentSaldo();
             hentPortefolje();
-            console.log(OK);
+
         }
         else {
-            // midlertidig
+            receitHeader.innerHTML = "Feil";
+            ut = "<table><tbody>" + "<tr><td>" + "Det har opstått en feil" + "</td></tr>" +
+                "<tr><td>" + "<b>Salget er avbrutt<b>" + "</td></tr>" + "</tbody></table>";
 
-            console.log("Selg: Det har oppstått en feil")
+            kvitteringMelding.innerHTML = ut;
         }
     })
 }

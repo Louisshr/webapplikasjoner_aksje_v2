@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{9E74FA2D-25A6-41A1-B428-552197CEE2F8}|Default">
+  <MonoDevelop.Ide.ItemProperties.aksje2 PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="aksje2/DAL/AksjeRepository.cs">
+    <Files>
+      <File FileName="aksje2/wwwroot/index.html" Line="75" Column="60" />
+      <File FileName="aksje2/wwwroot/js/index.js" Line="25" Column="58" />
+      <File FileName="aksje2/DAL/AksjeRepository.cs" Line="183" Column="63" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="aksje2" expanded="True">
+            <Node name="aksje2" expanded="True">
+              <Node name="DAL" expanded="True">
+                <Node name="AksjeRepository.cs" selected="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="js" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

@@ -41,7 +41,7 @@ namespace aksje2.Model
                 List<Kjop> liste = new List<Kjop>();
 
 
-                Person nyPerson = new Person { fornavn = "Line", etternavn = "Hansen", saldo = 1000, kjop = liste};
+                Person nyPerson = new Person { fornavn = "Line", etternavn = "Hansen", saldo = 10000, kjop = liste};
 
                 List<Kjop> kjopListePortefolje = new List<Kjop>();
                 Portfolje nyPortfolje = new Portfolje();
