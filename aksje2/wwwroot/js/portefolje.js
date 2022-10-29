@@ -76,10 +76,13 @@ function selg(id) {
 function fullforSalg(aksje_id, verdi, aksje_navn) {
     let input_antall = document.getElementById("typeNumber");
     let antall = Number(input_antall.value);
+    let totalPris = verdi * antall;
 
     if (isNaN(antall) || input_antall == '') {
         console.log("Venligst oppgi et gyldig antall");
     }
+
+
 
     let selg_objekt =
     {
@@ -105,7 +108,7 @@ function fullforSalg(aksje_id, verdi, aksje_navn) {
             ut = "<table><tbody>" + "<tr><td>" + "<b>Salg gjennomført</b>" + "</td></tr><tr><td></td></tr>" +
                 "<tr><td>" + "Aksje solgt: " + aksje_navn + "</td></tr>" +
                 "<tr><td>" + "Antall: " + antall + "</td></tr>" +
-                "<tr><td>" + "Totalpris: " + verdi * antall + " $" + "</td></tr>" + "</tbody></table>";
+                "<tr><td>" + "Totalpris: " + totalPris.toFixed(2) + " $" + "</td></tr>" + "</tbody></table>";
 
             kvitteringMelding.innerHTML = ut
 
