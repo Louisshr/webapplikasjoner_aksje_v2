@@ -60,14 +60,20 @@ namespace aksje2.DAL
                     return false;
                 }
 
-                // beregner total pris for handelen, og sjekker om personen har nok penger på konto for å betale for kjøpet
+
+                // beregner totalpris for handelen
 
                 var kjopPris = enAksje.verdi * innSalg.antall;
+
+                // sjekker om totalpris er 0
+                // hvis total pris er 0, prøver kunden å handle 0 aksjer, eller totalpris er større en det typen double kan lagre
 
                 if (kjopPris == 0)
                 {
                     return false;
                 }
+
+                // sjekker om kunde har nok penger på konto
 
                 if (enPerson.saldo < kjopPris)
                 {
@@ -80,7 +86,7 @@ namespace aksje2.DAL
                 nyttKjop.person = enPerson;
                 nyttKjop.aksje = enAksje;
                 nyttKjop.antall = innSalg.antall;
-                nyttKjop.pris = kjopPris;       //HER
+                nyttKjop.pris = kjopPris;
 
 
                 // oppretter en bool variabel, funnet
@@ -94,7 +100,7 @@ namespace aksje2.DAL
                 {
                     if (i.aksje == enAksje)
                     {
-                        i.pris += kjopPris; // HER
+                        i.pris += kjopPris;
                         i.antall += innSalg.antall;
                         funnet = true;
                     }
@@ -108,7 +114,7 @@ namespace aksje2.DAL
                 }
 
                 enPerson.kjop.Add(nyttKjop);
-                enPerson.saldo = enPerson.saldo - kjopPris;  //HER
+                enPerson.saldo = enPerson.saldo - kjopPris;
 
                 db.kjopt.Add(nyttKjop);
                 await db.SaveChangesAsync();
