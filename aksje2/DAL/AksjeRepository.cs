@@ -166,12 +166,14 @@ namespace aksje2.DAL
         {
             try
             {
+                // sjekker først om person som gjennomfører kjøpet, og aksjen som handles, finnes
+
                 Person enPerson = await db.personer.FindAsync(innSelg.personId);
                 Aksje enAksje = await db.akjser.FindAsync(innSelg.aksjeId);
 
+                // hvis person eller aksje ikke ble funnet, avbrytes kjøpet
                 if (enPerson == null || enAksje == null)
-                {
-                    // person ble ikke funnet eller aksje ble ikke funnet, kjøp avbrytes
+                {                   
                     return false;
                 }
 
@@ -179,7 +181,7 @@ namespace aksje2.DAL
 
 
                 foreach (Kjop kjop in aksjer_til_kunde)
-                {
+                {                    
                     if (kjop.aksje.id == enAksje.id)
                     {
                         if (kjop.antall >= innSelg.antall)
