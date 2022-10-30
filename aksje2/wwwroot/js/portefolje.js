@@ -49,8 +49,6 @@ function formaterPortefolje(portefolje) {
             "<td>" + aksje.pris.toFixed(2) + "</td>" +
             "<td> <button class='btn btn-danger' data-toggle='modal' data-target='#selg_popupBox' onclick='selg(" + aksje.aksje.id + ")'>selg</button></td>" +
             "</tr>";
-
-        console.log(aksje.aksje.id);
     }
 
     ut += "</tbody></table>";
