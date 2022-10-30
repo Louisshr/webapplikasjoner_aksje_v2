@@ -18,7 +18,6 @@ function hentAlleAksjer() {
 }
 
 
-
 function formaterAksjer(aksjer) {
     let ut = "<table class='table table-sm'>" + "<thead class='thead-light'>" + "<tr>" +
         "<th scope='col'>Navn</th>" +
@@ -110,7 +109,7 @@ function fullforKjop(id, verdi, aksje) {
                 ut = "<table><tbody>" + "<tr><td>" + "<b>Kjøp gjennomført</b>" + "</td></tr><tr><td></td></tr>" +
                     "<tr><td>" + "Aksje handlet: " + aksje + "</td></tr>" +
                     "<tr><td>" + "Antall: " + antall + "</td></tr>" +
-                    "<tr><td>" + "Totalpris: " + total_pris + " $" + "</td></tr>" + "</tbody></table>";
+                    "<tr><td>" + "Totalpris: " + total_pris.toFixed(2) + " $" + "</td></tr>" + "</tbody></table>";
 
                 kvitteringMelding.innerHTML = ut;
 
