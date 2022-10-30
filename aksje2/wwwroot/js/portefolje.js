@@ -78,8 +78,9 @@ function fullforSalg(aksje_id, verdi, aksje_navn) {
     let antall = Number(input_antall.value);
     let totalPris = verdi * antall;
 
-    if (isNaN(antall) || input_antall == '') {
+    if (isNaN(antall) || input_antall.value == '') {
         console.log("Venligst oppgi et gyldig antall");
+        return;
     }
 
 
