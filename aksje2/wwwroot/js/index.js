@@ -10,9 +10,7 @@ function hentAlleAksjer() {
         if (aksjer != null) {
             formaterAksjer(aksjer);
         }
-        else {
-            // midlertidig
-
+        else {            
             console.log("Ikke mulig å hente aksjer");
         }
     });
